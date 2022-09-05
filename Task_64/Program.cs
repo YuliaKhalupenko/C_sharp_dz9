@@ -3,20 +3,14 @@
 //M = 4; N = 8. -> 4, 6, 7, 8
 
 
-void PrintInterval(int m, int n)
-		{
-			int start = m;
-			int end = n;
-			if(m > n)
-			{
-				start = n;
-				end = m;
-			}
-			for(int i = start; i <= end; i++)
-			{
-				Console.Write($"{i} ");
-			}
-		}
+ void Recur(int m, int n)
+        {
+            if (m > n) return;
+            {
+                Recur(m, n - 1);
+                Console.Write($"{n}, ");
+            }
+        }
 
 Console.Clear();
 
@@ -29,5 +23,5 @@ int InputNumbers(string input)
   int output = Convert.ToInt32(Console.ReadLine());
   return output;
 }
+Recur(m, n);
 
-PrintInterval(m, n);
